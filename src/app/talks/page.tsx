@@ -73,7 +73,7 @@ export default function TalksPage() {
               </div>
               <div className="mt-8">
                 <a
-                  href="mailto:hello@abhiramnj.com"
+                  href="mailto:hi@abhiramnj.com"
                   className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
                 >
                   Invite Me to Speak
