@@ -16,6 +16,8 @@ const navigation = [
   { name: 'Projects', href: '/projects' },
   { name: 'Talks', href: '/talks' },
   { name: 'Now', href: '/now' },
+  { name: 'Newsletter', href: 'https://twilighty.substack.com' },
+  { name: 'Digital Garden', href: 'https://garden.abhiramnj.com' },
 ];
 
 export function Navigation({ allContent }: NavigationProps) {
