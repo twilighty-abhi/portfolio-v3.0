@@ -9,30 +9,27 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   useEffect(() => {
-    // Ensure the theme is applied immediately on mount
-    const applyTheme = () => {
+    // Force dark mode
+    const applyDarkTheme = () => {
       try {
-        const theme = localStorage.getItem('portfolio-theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (theme === 'dark' || (!theme && systemPrefersDark)) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
+        // Always set dark mode regardless of system preference
+        document.documentElement.classList.add('dark');
+        // Save the preference to localStorage
+        localStorage.setItem('portfolio-theme', 'dark');
       } catch (error) {
         console.error('Theme application error:', error);
       }
     };
 
-    applyTheme();
+    applyDarkTheme();
   }, []);
 
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="dark"
+      enableSystem={false}
+      forcedTheme="dark"
       disableTransitionOnChange={false}
       storageKey="portfolio-theme"
     >

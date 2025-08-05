@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ThemeToggle } from './theme-toggle';
 import { GlobalSearch } from './global-search';
 import { type ContentItem } from '@/lib/content';
 
@@ -52,7 +51,6 @@ export function Navigation({ allContent }: NavigationProps) {
 
         <div className="flex items-center gap-4">
           <GlobalSearch allContent={allContent} />
-          <ThemeToggle />
         </div>
       </div>
 
