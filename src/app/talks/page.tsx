@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { ExternalLink, MapPin, Calendar, Users } from 'lucide-react';
 import { getContentByType } from '@/lib/content-server';
 
@@ -83,11 +84,11 @@ export default function TalksPage() {
             {talks.map((talk) => (
               <article
                 key={talk.slug}
-                className="rounded-lg border border-neutral-200 bg-white p-8 transition-colors hover:border-neutral-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-700"
+                className="group rounded-lg border border-neutral-200 bg-white transition-colors hover:border-neutral-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-700"
               >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8">
-                  <div className="flex-1">
-                    <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 lg:text-2xl">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8 p-8">
+                  <Link href={`/talks/${talk.slug}`} className="flex-1 block">
+                    <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 lg:text-2xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {talk.title}
                     </h2>
                     {talk.description && (
@@ -135,7 +136,7 @@ export default function TalksPage() {
                         ))}
                       </div>
                     )}
-                  </div>
+                  </Link>
 
                   <div className="mt-6 flex flex-col gap-3 lg:mt-0 lg:flex-shrink-0">
                     {talk.slidesUrl && (
