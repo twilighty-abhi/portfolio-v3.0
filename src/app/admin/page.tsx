@@ -184,7 +184,7 @@ published: true
 # Project-specific fields
 techStack: ["Next.js", "TypeScript"]
 liveUrl: "https://example.com"
-githubUrl: "https://github.com/user/repo"
+githubUrl: "https://github.com/twilighty-abhi/repo"
 ---
 
 Your markdown content goes here...`}

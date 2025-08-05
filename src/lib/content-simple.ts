@@ -65,7 +65,7 @@ const mockData: ContentType = {
       readingTime: '3 min read',
       techStack: ['Next.js', 'Tailwind CSS', 'TypeScript'],
       liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/username/portfolio'
+      githubUrl: 'https://github.com/twilighty-abhi/portfolio'
     }
   ],
   talks: [],

@@ -78,7 +78,7 @@ content/                   # Markdown content
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/abhiramnj/portfolio-v3.git
+git clone https://github.com/twilighty-abhi/portfolio-v3.git
 cd portfolio-v3
 ```
 
@@ -125,7 +125,7 @@ readingTime: "10 min read"
 # Project-specific
 techStack: ["Next.js", "TypeScript", "Tailwind CSS"]
 liveUrl: "https://example.com"
-githubUrl: "https://github.com/user/repo"
+githubUrl: "https://github.com/twilighty-abhi/repo"
 
 # Talk-specific
 event: "Conference Name"
@@ -168,11 +168,11 @@ npm start
 
 ### Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fabhiramnj%2Fportfolio-v3)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftwilighty-abhi%2Fportfolio-v3)
 
 ### Deploy to Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/abhiramnj/portfolio-v3)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/twilighty-abhi/portfolio-v3)
 
 ## 📊 Performance
 
