@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function TalksPage() {
-  const talks = getContentByType('talks');
+  const allTalks = getContentByType('talks');
+  const talks = allTalks.filter(talk => talk.published === true);
 
   return (
     <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">

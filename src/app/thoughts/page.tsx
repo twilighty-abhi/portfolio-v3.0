@@ -8,7 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default function ThoughtsPage() {
-  const thoughts = getContentByType('thoughts');
+  const allThoughts = getContentByType('thoughts');
+  const thoughts = allThoughts.filter(thought => thought.published === true);
 
   return (
     <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">

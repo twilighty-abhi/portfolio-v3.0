@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  const projects = getContentByType('projects');
+  const allProjects = getContentByType('projects');
+  const projects = allProjects.filter(project => project.published === true);
 
   return (
     <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">

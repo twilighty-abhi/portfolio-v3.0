@@ -8,7 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = getContentByType('blog');
+  const allPosts = getContentByType('blog');
+  const posts = allPosts.filter(post => post.published === true);
 
   return (
     <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">

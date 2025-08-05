@@ -68,3 +68,7 @@ export function getContentBySlug(type: keyof ContentType, slug: string): Content
   const items = getContentByType(type);
   return items.find(item => item.slug === slug) || null;
 }
+
+export function getPublishedContent(type: keyof ContentType): ContentItem[] {
+  return getContentByType(type).filter(item => item.published === true);
+}
