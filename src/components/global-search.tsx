@@ -38,7 +38,7 @@ export function GlobalSearch({ allContent }: GlobalSearchProps) {
 
   useEffect(() => {
     if (query.trim()) {
-      const filteredContent = allContent.filter(item => item.published);
+      const filteredContent = allContent.filter(item => item.published && item.type !== 'now');
       const filteredResults = filteredContent.filter(item => {
         const searchText = `${item.title} ${item.description} ${item.content} ${item.tags?.join(' ')}`.toLowerCase();
         return searchText.includes(query.toLowerCase());
@@ -61,7 +61,6 @@ export function GlobalSearch({ allContent }: GlobalSearchProps) {
       thoughts: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
       projects: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
       talks: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300',
-      now: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
     };
     return colors[type as keyof typeof colors] || 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300';
   };

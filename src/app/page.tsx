@@ -4,8 +4,8 @@ import { getAllContent } from '@/lib/content-server';
 import { getRecentContent } from '@/lib/content';
 
 export default function HomePage() {
-  const allContent = getAllContent();
-  const recentContent = getRecentContent(allContent, 6);
+  const allContent = getAllContent().filter(item => item.type !== 'now');
+  const recentContent = getRecentContent(allContent, 3);
 
   return (
     <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -15,7 +15,7 @@ export default function HomePage() {
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-6xl">
             Hey, I&apos;m{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Your Name
+              Abhiram N J
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-400">
