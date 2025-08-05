@@ -21,17 +21,6 @@ export default function NowPage() {
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
             Current projects, interests, and focus areas
           </p>
-          {/* <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-500">
-            Inspired by{' '}
-            <a
-              href="https://nownownow.com/about"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              nownownow.com
-            </a>
-          </p> */}
         </header>
 
         {!latestNow ? (
@@ -101,11 +90,8 @@ export default function NowPage() {
               </h2>
               {latestNow.date && (
                 <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-500">
-                  Last updated: {new Date(latestNow.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
+                  {/* Use a fixed date format to avoid hydration mismatch */}
+                  Last updated: {latestNow.date}
                 </p>
               )}
             </header>
