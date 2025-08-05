@@ -185,7 +185,7 @@ export default function TalksPage() {
                 Send Speaking Inquiry
               </a>
               <a
-                href="https://twitter.com/abhiramnj"
+                href="https://x.com/TwilightyAbhi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-lg border border-neutral-300 px-6 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-800"

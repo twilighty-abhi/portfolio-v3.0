@@ -106,7 +106,7 @@ export default async function ThoughtPage({ params }: ThoughtPageProps) {
             <p className="text-neutral-600 dark:text-neutral-400">
               Have thoughts on this? Let's discuss on{' '}
               <a
-                href="https://twitter.com/abhiramnj"
+                href="https://x.com/TwilightyAbhi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"

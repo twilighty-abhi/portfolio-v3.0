@@ -34,7 +34,7 @@ export default function HomePage() {
             GitHub
           </Link>
           <Link
-            href="https://twitter.com"
+            href="https://x.com/TwilightyAbhi"
             className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 dark:hover:bg-neutral-800"
           >
             <Twitter className="h-4 w-4" />

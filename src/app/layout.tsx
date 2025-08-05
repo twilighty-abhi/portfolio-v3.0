@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abhiram N J - Developer & Creator",
     description: "Personal portfolio of Abhiram N J - thoughts, projects, talks, and more.",
-    creator: "@abhiramnj",
+    creator: "@TwilightyAbhi",
   },
   robots: {
     index: true,

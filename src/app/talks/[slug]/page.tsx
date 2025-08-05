@@ -169,7 +169,7 @@ export default async function TalkPage({ params }: TalkPageProps) {
                 Send Speaking Inquiry
               </a>
               <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Great insights from "${talk.title}" by @abhiramnj`)}`}
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Great insights from "${talk.title}" by @TwilightyAbhi`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-800"
