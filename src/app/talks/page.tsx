@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ExternalLink, MapPin, Calendar, Users } from 'lucide-react';
 import { getContentByType } from '@/lib/content-server';
+import { ContactCard } from '@/components/contact-card';
 
 export const metadata: Metadata = {
   title: 'Talks - Abhiram N J',
@@ -169,33 +170,7 @@ export default function TalksPage() {
           </div>
         )}
 
-        <footer className="mt-16 text-center">
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-8 dark:border-neutral-800 dark:bg-neutral-900">
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
-              Let's Connect
-            </h2>
-            <p className="text-neutral-600 dark:text-neutral-400 mb-6">
-              Interested in having me speak at your event or podcast? 
-              I'd love to share insights about web development, technology trends, and career growth.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-              <a
-                href="mailto:hello@abhiramnj.com"
-                className="inline-flex items-center justify-center rounded-lg bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
-              >
-                Send Speaking Inquiry
-              </a>
-              <a
-                href="https://x.com/TwilightyAbhi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg border border-neutral-300 px-6 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-800"
-              >
-                Connect on Twitter
-              </a>
-            </div>
-          </div>
-        </footer>
+
       </div>
     </div>
   );

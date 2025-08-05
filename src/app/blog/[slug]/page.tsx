@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { getContentBySlug, getContentByType } from '@/lib/content-server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { ContactCard } from '@/components/contact-card';
 
 interface BlogPageProps {
   params: Promise<{
@@ -138,6 +139,11 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                 Send Feedback
               </a>
             </div>
+          </div>
+          
+          {/* Contact Card */}
+          <div className="mt-12">
+            <ContactCard bgColor="bg-blue-50 dark:bg-[#86B6F6]" textColor="text-neutral-900 dark:text-black" />
           </div>
         </footer>
       </div>

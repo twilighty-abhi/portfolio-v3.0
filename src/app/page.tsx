@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import { getAllContent } from '@/lib/content-server';
 import { getRecentContent } from '@/lib/content';
+import { ContactCard } from '@/components/contact-card';
 
 export default function HomePage() {
   const allContent = getAllContent().filter(item => item.type !== 'now');

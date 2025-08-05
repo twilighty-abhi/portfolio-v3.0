@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { getContentBySlug, getContentByType } from '@/lib/content-server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { ContactCard } from '@/components/contact-card';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -150,6 +151,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 View More Projects
               </Link>
             </div>
+          </div>
+          
+          {/* Contact Card */}
+          <div className="mt-12">
+            <ContactCard bgColor="bg-blue-50 dark:bg-[#C3FF68]" textColor="text-neutral-900 dark:text-black" />
           </div>
         </footer>
       </div>

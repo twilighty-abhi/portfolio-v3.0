@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ExternalLink, Github } from 'lucide-react';
 import { getContentByType } from '@/lib/content-server';
+import { ContactCard } from '@/components/contact-card';
 
 export const metadata: Metadata = {
   title: 'Projects - Abhiram N J',

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getContentByType } from '@/lib/content-server';
+import { ContactCard } from '@/components/contact-card';
 
 export const metadata: Metadata = {
   title: 'Blog - Abhiram N J',
