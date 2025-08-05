@@ -1,0 +1,305 @@
+---
+title: "Building a Modern Portfolio with Next.js and MDX"
+description: "A comprehensive guide to creating a portfolio site with Next.js App Router, MDX content management, and modern web technologies"
+date: "2025-01-04"
+tags: ["nextjs", "mdx", "portfolio", "web-development", "react"]
+category: "tutorial"
+published: true
+readingTime: "12 min read"
+---
+
+# Building a Modern Portfolio with Next.js and MDX
+
+Creating a portfolio website that stands out in today's competitive landscape requires more than just showcasing your projects. You need a platform that's fast, maintainable, and allows you to share your thoughts and experiences effectively.
+
+In this comprehensive guide, we'll build a modern portfolio using Next.js 15 with the App Router, MDX for content management, and a suite of modern tools that will make your site both performant and delightful to use.
+
+## Why This Tech Stack?
+
+### Next.js 15 with App Router
+- **Server-side rendering** for better SEO and performance
+- **File-based routing** makes organizing pages intuitive
+- **Built-in optimization** for images, fonts, and scripts
+- **API routes** for dynamic functionality
+
+### MDX for Content
+- **Markdown with React components** - best of both worlds
+- **Type-safe frontmatter** for metadata
+- **Version control friendly** - your content lives in Git
+- **No database required** - simpler deployment and maintenance
+
+### Modern Developer Experience
+- **TypeScript** for type safety and better DX
+- **Tailwind CSS** for utility-first styling
+- **Dark mode support** with next-themes
+- **Global search** functionality with Fuse.js
+
+## Project Structure
+
+```
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── blog/
+│   │   ├── projects/
+│   │   ├── thoughts/
+│   │   └── layout.tsx
+│   ├── components/
+│   │   ├── navigation.tsx
+│   │   ├── theme-toggle.tsx
+│   │   └── global-search.tsx
+│   └── lib/
+│       ├── content.ts
+│       └── search.ts
+├── content/
+│   ├── blog/
+│   ├── thoughts/
+│   ├── projects/
+│   └── talks/
+└── public/
+```
+
+## Setting Up the Foundation
+
+First, let's create a new Next.js project with TypeScript and Tailwind CSS:
+
+```bash
+npx create-next-app@latest portfolio --typescript --tailwind --eslint --app --src-dir
+cd portfolio
+```
+
+Install the additional dependencies we'll need:
+
+```bash
+npm install @next/mdx @mdx-js/loader @mdx-js/react next-themes gray-matter fuse.js next-seo framer-motion lucide-react next-mdx-remote
+```
+
+## Content Management System
+
+One of the key features of our portfolio is the content management system. We'll create a flexible system that can handle different types of content: blog posts, thoughts, projects, and talks.
+
+### Content Types
+
+Each content type has its own folder structure and frontmatter schema:
+
+```typescript
+export interface ContentItem {
+  slug: string;
+  title: string;
+  description?: string;
+  date: string;
+  tags?: string[];
+  published: boolean;
+  content: string;
+  readingTime?: string;
+  // Blog-specific
+  category?: string;
+  // Project-specific
+  techStack?: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  // Talk-specific
+  event?: string;
+  location?: string;
+  slidesUrl?: string;
+  videoUrl?: string;
+}
+```
+
+### Content Loading
+
+We'll create utility functions to load and parse our MDX content:
+
+```typescript
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+export function getContentByType(type: keyof ContentType): ContentItem[] {
+  const typeDirectory = path.join(process.cwd(), 'content', type);
+  
+  if (!fs.existsSync(typeDirectory)) {
+    return [];
+  }
+
+  const fileNames = fs.readdirSync(typeDirectory);
+  const allContent = fileNames
+    .filter(name => name.endsWith('.md') || name.endsWith('.mdx'))
+    .map(name => {
+      const fullPath = path.join(typeDirectory, name);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data, content } = matter(fileContents);
+      
+      return {
+        slug: name.replace(/\.mdx?$/, ''),
+        content,
+        ...data,
+      } as ContentItem;
+    })
+    .filter(item => item.published)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  return allContent;
+}
+```
+
+## Global Search Implementation
+
+A standout feature of our portfolio is the global search functionality. Users can search across all content types using a keyboard shortcut (Cmd/Ctrl + K).
+
+### Search Index
+
+We use Fuse.js for fuzzy search capabilities:
+
+```typescript
+import Fuse from 'fuse.js';
+
+const fuseOptions = {
+  keys: [
+    { name: 'title', weight: 0.3 },
+    { name: 'description', weight: 0.2 },
+    { name: 'content', weight: 0.1 },
+    { name: 'tags', weight: 0.2 },
+  ],
+  threshold: 0.4,
+  includeScore: true,
+  includeMatches: true,
+};
+
+export function createSearchIndex(content: { [key: string]: ContentItem[] }) {
+  const searchableContent: SearchResult[] = [];
+  
+  Object.entries(content).forEach(([type, items]) => {
+    items.forEach(item => {
+      searchableContent.push({
+        ...item,
+        type: type as SearchResult['type'],
+      });
+    });
+  });
+  
+  return new Fuse(searchableContent, fuseOptions);
+}
+```
+
+### Search Modal Component
+
+The search modal provides an intuitive interface for finding content:
+
+```tsx
+export function GlobalSearch() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState<SearchResult[]>([]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsOpen(true);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Search implementation...
+}
+```
+
+## Dark Mode Implementation
+
+Modern portfolios need dark mode support. We'll use next-themes for seamless theme switching:
+
+```tsx
+'use client';
+
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <NextThemesProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      {children}
+    </NextThemesProvider>
+  );
+}
+```
+
+## Performance Optimizations
+
+### Static Generation
+
+All content pages are statically generated at build time for optimal performance:
+
+```typescript
+export async function generateStaticParams() {
+  const posts = getContentByType('blog');
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+```
+
+### Image Optimization
+
+Next.js automatically optimizes images. For content images, use the Image component:
+
+```tsx
+import Image from 'next/image';
+
+<Image
+  src="/project-screenshot.jpg"
+  alt="Project screenshot"
+  width={800}
+  height={600}
+  className="rounded-lg shadow-lg"
+/>
+```
+
+## SEO and Meta Tags
+
+Each page includes comprehensive meta tags for better SEO:
+
+```typescript
+export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+  const post = getContentItem('blog', params.slug);
+  
+  return {
+    title: `${post.title} - Blog - Abhiram N J`,
+    description: post.description || '',
+    openGraph: {
+      title: post.title,
+      description: post.description || '',
+      type: 'article',
+      publishedTime: post.date,
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description || '',
+    },
+  };
+}
+```
+
+## Conclusion
+
+Building a modern portfolio with Next.js and MDX provides the perfect balance of developer experience, performance, and maintainability. The combination of static generation, markdown content management, and modern tooling creates a site that's both fast and easy to update.
+
+Key benefits of this approach:
+
+- **Developer-friendly**: Write content in Markdown, deploy with Git
+- **Performance**: Static generation with smart optimization
+- **Maintainable**: Type-safe content management without databases
+- **Extensible**: Easy to add new content types and features
+
+The portfolio you've built will serve as both a showcase of your work and a platform for sharing your thoughts and experiences with the developer community.
+
+Ready to get started? Check out the complete source code and start building your own modern portfolio today!

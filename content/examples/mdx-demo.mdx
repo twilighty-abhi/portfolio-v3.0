@@ -1,0 +1,87 @@
+---
+title: "MDX Examples and Features"
+description: "Demonstrating the power of MDX with HTML tags, components, and custom styling."
+date: "2024-08-05"
+tags: ["MDX", "Examples", "HTML"]
+published: true
+readingTime: "5 min read"
+---
+
+# MDX Features Demo
+
+With MDX, you can mix Markdown with HTML and even React components!
+
+## Line Breaks and Spacing
+
+You can use HTML tags for precise control over spacing:
+
+This is a paragraph.<br />
+This is on a new line after a `<br />` tag.
+
+<br />
+<br />
+
+This has two line breaks above it.
+
+## Custom HTML Elements
+
+You can use any HTML elements:
+
+<div style={{ padding: '20px', backgroundColor: '#f3f4f6', borderRadius: '8px', margin: '20px 0' }}>
+  This is a custom styled div with padding and background color.
+</div>
+
+<blockquote style={{ borderLeft: '4px solid #3b82f6', paddingLeft: '16px', fontStyle: 'italic' }}>
+  This is a custom styled blockquote.
+</blockquote>
+
+## Lists with Custom Spacing
+
+Traditional markdown list:
+- Item 1
+- Item 2  
+- Item 3
+
+List with custom spacing using `<br />`:
+- Item 1<br />
+  With additional details on a new line
+- Item 2<br />
+  With more information
+- Item 3
+
+## Combining Markdown and HTML
+
+You can write **bold text** and *italic text* in markdown, then add <span style={{ color: 'red' }}>colored text</span> with HTML.
+
+### Code Blocks Still Work
+
+```typescript
+function example() {
+  return "MDX supports code blocks too!";
+}
+```
+
+## Tables with Custom Styling
+
+| Feature | Markdown | MDX |
+|---------|----------|-----|
+| Headers | ✅ | ✅ |
+| Lists | ✅ | ✅ |
+| HTML Tags | ❌ | ✅ |
+| React Components | ❌ | ✅ |
+
+<br />
+
+## Final Notes
+
+With MDX, you get:
+- All the simplicity of Markdown<br />
+- The power of HTML for custom styling<br />
+- The ability to use React components (if needed)<br />
+- Complete control over spacing and layout
+
+<hr style={{ margin: '40px 0', border: 'none', borderTop: '2px solid #e5e7eb' }} />
+
+<div style={{ textAlign: 'center', padding: '20px' }}>
+  <strong>That's the power of MDX!</strong>
+</div>
