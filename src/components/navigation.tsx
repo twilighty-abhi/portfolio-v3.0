@@ -31,7 +31,9 @@ export function Navigation({ allContent }: NavigationProps) {
             href="/"
             className="text-xl font-bold text-neutral-900 dark:text-neutral-100"
           >
-            Abhiram N J
+            <div>
+              <span>Abhiram NJ</span>
+            </div>
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">

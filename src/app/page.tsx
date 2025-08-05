@@ -16,9 +16,10 @@ export default function HomePage() {
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-6xl">
             Hey, I&apos;m{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Abhiram N J
+              Abhiram NJ
             </span>
           </h1>
+          <p className="text-xl mb-2">[ab-hi-raam] • അഭിരാം</p>
           <p className="mx-auto max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-400">
             Full-stack developer passionate about building beautiful, functional web applications.
             I love exploring new technologies and sharing what I learn.

@@ -16,23 +16,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abhiram N J - Developer & Creator",
-  description: "Personal portfolio of Abhiram N J - thoughts, projects, talks, and more.",
+  title: "Abhiram NJ - Developer & Creator",
+  description: "Personal portfolio of Abhiram NJ - thoughts, projects, talks, and more.",
   keywords: ["developer", "portfolio", "blog", "projects", "talks"],
-  authors: [{ name: "Abhiram N J" }],
-  creator: "Abhiram N J",
+  authors: [{ name: "Abhiram NJ" }],
+  creator: "Abhiram NJ",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://abhiramnj.com",
-    title: "Abhiram N J - Developer & Creator",
-    description: "Personal portfolio of Abhiram N J - thoughts, projects, talks, and more.",
-    siteName: "Abhiram N J",
+    title: "Abhiram NJ - Developer & Creator",
+    description: "Personal portfolio of Abhiram NJ - thoughts, projects, talks, and more.",
+    siteName: "Abhiram NJ",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abhiram N J - Developer & Creator",
-    description: "Personal portfolio of Abhiram N J - thoughts, projects, talks, and more.",
+    title: "Abhiram NJ - Developer & Creator",
+    description: "Personal portfolio of Abhiram NJ - thoughts, projects, talks, and more.",
     creator: "@TwilightyAbhi",
   },
   robots: {
