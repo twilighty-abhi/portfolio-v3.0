@@ -18,10 +18,10 @@ export default function ProjectsPage() {
       <div className="mx-auto max-w-6xl">
         <header className="mb-12 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
-            Projects
+            projects
           </h1>
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
-            A collection of applications and tools I've built
+            A collection of mini and large tools I've built.
           </p>
         </header>
 

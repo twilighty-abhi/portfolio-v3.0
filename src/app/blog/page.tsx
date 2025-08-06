@@ -17,10 +17,10 @@ export default function BlogPage() {
       <div className="mx-auto max-w-4xl">
         <header className="mb-12 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
-            Blog
+            blog
           </h1>
           <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
-            Technical articles, tutorials, and insights about web development
+           For anyone who wants to read something and get some knowledge. Enriched with life knowledge and productivty hacks and tips.
           </p>
         </header>
 

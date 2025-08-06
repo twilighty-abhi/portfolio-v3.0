@@ -33,8 +33,8 @@ export default function TalksPage() {
               </h2>
               <p className="text-neutral-600 dark:text-neutral-400 mb-6">
                 I'm always interested in sharing knowledge and experiences with the developer community. 
-                I'd love to speak at your event about web development, modern JavaScript frameworks, 
-                or developer productivity.
+                I'd love to speak at your event about web development, open source, 
+                or productivity.
               </p>
               <div className="space-y-4 text-left max-w-md mx-auto">
                 <div className="flex items-start gap-3">
