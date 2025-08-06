@@ -163,7 +163,7 @@ export default async function TalkPage({ params }: TalkPageProps) {
             </div>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="mailto:hello@abhiramnj.com"
+                href="mailto:hi@abhiramnj.com"
                 className="inline-flex items-center gap-2 rounded-lg bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
               >
                 Send Speaking Inquiry
