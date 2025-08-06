@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import { getAllContent } from '@/lib/content-server';
 import { getRecentContent } from '@/lib/content';
 import { ContactCard } from '@/components/contact-card';
@@ -16,7 +16,7 @@ export default function HomePage() {
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-6xl">
             Hey, I&apos;m{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Abhiram NJ
+              Abhiram
             </span>
           </h1>
           <p className="text-xl mb-2">[ab-hi-raam] • അഭിരാം</p>
@@ -26,52 +26,20 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Social Links */}
-        <div className="flex items-center justify-center gap-4 mb-12">
-          <Link
-            href="https://github.com/twilighty-abhi"
-            className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 dark:hover:bg-neutral-800"
-          >
-            <Github className="h-4 w-4" />
-            GitHub
-          </Link>
-          <Link
-            href="https://x.com/TwilightyAbhi"
-            className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 dark:hover:bg-neutral-800"
-          >
-            <Twitter className="h-4 w-4" />
-            Twitter
-          </Link>
-          <Link
-            href="https://linkedin.com/in/abhiram-n-j"
-            className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 dark:hover:bg-neutral-800"
-          >
-            <Linkedin className="h-4 w-4" />
-            LinkedIn
-          </Link>
-          <Link
-            href="mailto:hi@abhiramnj.com"
-            className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 dark:hover:bg-neutral-800"
-          >
-            <Mail className="h-4 w-4" />
-            Email
-          </Link>
-        </div>
-
         {/* CTA Buttons */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
           >
-            View My Work
+            View My Works
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
-            href="/thoughts"
+            href="#contact"
             className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-100 dark:hover:bg-neutral-800"
           >
-            Read My Thoughts
+            Contact Me
           </Link>
         </div>
       </section>
@@ -141,6 +109,86 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Connect with me Section */}
+      <section id="contact" className="mx-auto mt-20 max-w-4xl py-12 border-t border-neutral-200 dark:border-neutral-800">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+            Connect With Me
+          </h2>
+          <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
+            Feel free to reach out through any of these platforms
+          </p>
+        </div>
+        
+        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-4 w-full">
+            <a 
+              href="https://github.com/twilighty-abhi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <Github className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
+              <span className="text-sm font-medium">GitHub</span>
+            </a>
+            
+            <a 
+              href="https://x.com/TwilightyAbhi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <svg className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span className="text-sm font-medium">Twitter</span>
+            </a>
+            
+            <a 
+              href="https://linkedin.com/in/abhiram-n-j" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <Linkedin className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
+              <span className="text-sm font-medium">LinkedIn</span>
+            </a>
+            
+            <a 
+              href="mailto:hi@abhiramnj.com" 
+              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <Mail className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
+              <span className="text-sm font-medium">Email</span>
+            </a>
+            
+            <a 
+              href="https://garden.abhiramnj.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <svg className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+              <span className="text-sm font-medium">Digital Garden</span>
+            </a>
+            
+            <a 
+              href="https://twilighty.substack.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <svg className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+              </svg>
+              <span className="text-sm font-medium">Newsletter</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
