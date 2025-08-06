@@ -127,64 +127,64 @@ export default function HomePage() {
               href="https://github.com/twilighty-abhi" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+              className="flex items-center justify-center p-3 rounded-full w-12 h-12 border border-neutral-200 bg-white transition-all hover:shadow-md hover:-translate-y-1 dark:border-neutral-800 dark:bg-neutral-900"
+              aria-label="GitHub"
             >
-              <Github className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
-              <span className="text-sm font-medium">GitHub</span>
+              <Github className="h-6 w-6 text-neutral-800 dark:text-neutral-200" />
             </a>
             
             <a 
               href="https://x.com/TwilightyAbhi" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+              className="flex items-center justify-center p-3 rounded-full w-12 h-12 border border-neutral-200 bg-white transition-all hover:shadow-md hover:-translate-y-1 dark:border-neutral-800 dark:bg-neutral-900"
+              aria-label="X (Twitter)"
             >
-              <svg className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="h-6 w-6 text-neutral-800 dark:text-neutral-200" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
-              <span className="text-sm font-medium">Twitter</span>
             </a>
             
             <a 
               href="https://linkedin.com/in/abhiram-n-j" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+              className="flex items-center justify-center p-3 rounded-full w-12 h-12 border border-neutral-200 bg-white transition-all hover:shadow-md hover:-translate-y-1 dark:border-neutral-800 dark:bg-neutral-900"
+              aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
-              <span className="text-sm font-medium">LinkedIn</span>
+              <Linkedin className="h-6 w-6 text-neutral-800 dark:text-neutral-200" />
             </a>
             
             <a 
               href="mailto:hi@abhiramnj.com" 
-              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+              className="flex items-center justify-center p-3 rounded-full w-12 h-12 border border-neutral-200 bg-white transition-all hover:shadow-md hover:-translate-y-1 dark:border-neutral-800 dark:bg-neutral-900"
+              aria-label="Email"
             >
-              <Mail className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
-              <span className="text-sm font-medium">Email</span>
+              <Mail className="h-6 w-6 text-neutral-800 dark:text-neutral-200" />
             </a>
             
             <a 
               href="https://garden.abhiramnj.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+              className="flex items-center justify-center p-3 rounded-full w-12 h-12 border border-neutral-200 bg-white transition-all hover:shadow-md hover:-translate-y-1 dark:border-neutral-800 dark:bg-neutral-900"
+              aria-label="Digital Garden"
             >
-              <svg className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="h-6 w-6 text-neutral-800 dark:text-neutral-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
-              <span className="text-sm font-medium">Digital Garden</span>
             </a>
             
             <a 
               href="https://twilighty.substack.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 p-3 rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-sm hover:-translate-y-0.5 dark:border-neutral-800 dark:bg-neutral-900"
+              className="flex items-center justify-center p-3 rounded-full w-12 h-12 border border-neutral-200 bg-white transition-all hover:shadow-md hover:-translate-y-1 dark:border-neutral-800 dark:bg-neutral-900"
+              aria-label="Newsletter"
             >
-              <svg className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="h-6 w-6 text-neutral-800 dark:text-neutral-200" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
               </svg>
-              <span className="text-sm font-medium">Newsletter</span>
             </a>
           </div>
         </div>
