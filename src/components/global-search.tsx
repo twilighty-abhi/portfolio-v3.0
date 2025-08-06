@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Search, X } from 'lucide-react';
 import Link from 'next/link';
 import { type ContentItem } from '@/lib/content';
@@ -14,6 +14,22 @@ export function GlobalSearch({ allContent }: GlobalSearchProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<ContentItem[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Add blur effect to main content when search is open
+  useEffect(() => {
+    // Apply a blur-background class to the body element instead of individual elements
+    // This will be used with a pseudo-element to create the blur effect
+    if (isOpen) {
+      document.body.classList.add('search-overlay-active');
+    } else {
+      document.body.classList.remove('search-overlay-active');
+    }
+
+    return () => {
+      // Cleanup on unmount
+      document.body.classList.remove('search-overlay-active');
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -49,11 +65,11 @@ export function GlobalSearch({ allContent }: GlobalSearchProps) {
     }
   }, [query]);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsOpen(false);
     setQuery('');
     setResults([]);
-  };
+  }, []);
 
   const getTypeColor = (type: string) => {
     const colors = {
@@ -82,9 +98,9 @@ export function GlobalSearch({ allContent }: GlobalSearchProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 p-4 pt-[10vh]" onClick={handleClose}>
+    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 p-4 pt-[10vh]" onClick={handleClose}>
       <div 
-        className="w-full max-w-2xl rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-neutral-800 dark:bg-neutral-950"
+        className="w-full max-w-2xl rounded-lg border border-neutral-200 bg-white shadow-xl dark:border-neutral-800 dark:bg-neutral-950"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center border-b border-neutral-200 px-4 dark:border-neutral-800">

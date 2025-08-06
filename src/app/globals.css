@@ -14,6 +14,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+/* Search overlay with blur effect */
+body.search-overlay-active::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  backdrop-filter: blur(3px);
+  z-index: 40;
+  pointer-events: none;
 }
 
 /* Utility classes */
