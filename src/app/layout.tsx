@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -55,12 +56,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const allContent = getAllContent();
-  
+  const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        {/* You can keep or add more meta tags here as per your requirements */}
+        {clarityProjectId && (
+          <Script
+            id="microsoft-clarity-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "${clarityProjectId}");
+              `
+            }}
+          />
+        )}
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
           <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950">
             <Navigation allContent={allContent} />
